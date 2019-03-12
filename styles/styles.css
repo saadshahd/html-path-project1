@@ -20,6 +20,16 @@ body {
   margin-right: -20px;
 }
 
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
 [class^="col-"] {
   float: left;
   padding: 0 20px;
@@ -37,6 +47,8 @@ body {
 .col-10 { width: calc((100% / 12) * 10) }
 .col-11 { width: calc((100% / 12) * 11) }
 .col-12 { width: calc((100% / 12) * 12) }
+
+.text-center { text-align: center; }
 
 .btn {
   border-radius: 40px;
@@ -158,11 +170,11 @@ body {
   font-size: 21px;
   font-weight: normal;
   margin: 0;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .feature {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .feature:last-child {
@@ -178,4 +190,104 @@ body {
 
 .feature__text {
   margin: 0;
+}
+
+.feature__icon {
+  float: left;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #EBEBEB;
+  line-height: 80px;
+  text-align: center;
+  margin-right: 20px;
+  color: #FF6701;
+  font-size: 30px;
+}
+
+.post {
+  margin-bottom: 30px;
+}
+
+.post__img {
+  display: block;
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #FF6700;
+  border-radius: 4px;
+}
+
+.post__img:hover > img {
+  opacity: 0.5;
+}
+
+.post__img:hover > .post__img__icon {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.post__img > img {
+  display: block;
+  max-width: 100%;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+.post__img__icon {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 2px solid #fff;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.post__title {
+  display: block;
+  color: #374050;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  height: 42px;
+}
+
+.post__title:hover {
+  opacity: 0.7;
+}
+
+.post__footer {
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #EBEBEB;
+}
+
+.post__footer:before,
+.post__footer:after {
+  content: "";
+  display: table;
+}
+
+.post__footer:after {
+  clear: both;
+}
+
+.post__category {
+  float: left;
+}
+
+.post__type {
+  float: right;
+  color: green;
+}
+
+.post__type.is-premium {
+  color: #FF6700;
 }
