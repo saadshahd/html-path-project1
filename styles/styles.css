@@ -48,6 +48,23 @@ body {
 .col-11 { width: calc((100% / 12) * 11) }
 .col-12 { width: calc((100% / 12) * 12) }
 
+[class^="col-offset-"] {
+  min-height: 1px;
+}
+
+.col-offset-1 { margin-left: calc(100% / 12) }
+.col-offset-2 { margin-left: calc((100% / 12) * 2) }
+.col-offset-3 { margin-left: calc((100% / 12) * 3) }
+.col-offset-4 { margin-left: calc((100% / 12) * 4) }
+.col-offset-5 { margin-left: calc((100% / 12) * 5) }
+.col-offset-6 { margin-left: calc((100% / 12) * 6) }
+.col-offset-7 { margin-left: calc((100% / 12) * 7) }
+.col-offset-8 { margin-left: calc((100% / 12) * 8) }
+.col-offset-9 { margin-left: calc((100% / 12) * 9) }
+.col-offset-10 { margin-left: calc((100% / 12) * 10) }
+.col-offset-11 { margin-left: calc((100% / 12) * 11) }
+.col-offset-12 { margin-left: calc((100% / 12) * 12) }
+
 .text-center { text-align: center; }
 
 .btn {
@@ -290,4 +307,86 @@ body {
 
 .post__type.is-premium {
   color: #FF6700;
+}
+
+.section--photo,
+.section--photo .section__title {
+  color: white;
+}
+
+.section--photo {
+  position: relative;
+}
+
+.section--photo:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: rgb(55,64,80);
+  background: linear-gradient(to bottom, rgb(55, 64, 80) 0%, rgb(121,134,150) 100%);
+  opacity: 0.7;
+}
+
+.section--photo .section__content {
+  position: relative;
+  z-index: 2;
+}
+
+.separator {
+  border: 0;
+  border-bottom: 1px solid #EBEBEB;
+  margin: 80px 0;
+}
+
+.video-thumb,
+.video-thumb__img {
+  border-radius: 4px;
+  display: block;
+}
+
+.video-thumb {
+  position: relative;
+  background-color: #FF6700;
+}
+
+.video-thumb:hover > .video-thumb__img {
+  opacity: 0.4;
+}
+
+.video-thumb__img {
+  border-radius: 4px;
+  opacity: 0.3;
+  max-width: 100%;
+  transition: 0.3s;
+}
+
+.video-thumb__icon {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  width: 80px;
+  height: 80px;
+  color: #374050;
+  background-color: white;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  font-size: 24px;
+  animation: play-animation 2s infinite;
+}
+
+.video-thumb:hover > .video-thumb__icon {
+  color: #FF6700;
+}
+
+@keyframes play-animation {
+  from { box-shadow : 0px 0px 0px 0px #FFF; }
+  to { box-shadow : 0px 0px 0px 10px transparent; }
 }
